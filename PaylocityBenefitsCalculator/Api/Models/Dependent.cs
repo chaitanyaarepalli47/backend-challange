@@ -9,4 +9,21 @@ public class Dependent
     public Relationship Relationship { get; set; }
     public int EmployeeId { get; set; }
     public Employee? Employee { get; set; }
+
+    public Dependent(){}
+    public Dependent(
+        int id,
+        String firstName,
+        String lastName,
+        DateTime dob,
+        Relationship relationship,
+        int empId
+    ){
+        Id = id;
+        FirstName = firstName;
+        LastName = lastName;
+        DateOfBirth = dob;
+        Relationship = relationship;
+        EmployeeId = empId;
+    }
 }
