@@ -45,6 +45,7 @@ public class EmployeeService : IEmployeeService
     }
 
     public decimal GetPayCheck(int id){
+        if(!_employees.ContainsKey(id)) return -1;
         decimal payCheck = _employees[id].Salary;
         Boolean additional = (payCheck>80000m)? true:false;
         decimal deductionperMonth = 1000;

@@ -77,6 +77,7 @@ public class EmployeesController : ControllerBase
     public async Task<ActionResult<ApiResponse<decimal>>> GetPayCheck(int id)
     {
         decimal paycheck = _employeeService.GetPayCheck(id);
+        if(paycheck < 0) return NotFound();
         var result = new ApiResponse<decimal>
         {
             Data = paycheck,
