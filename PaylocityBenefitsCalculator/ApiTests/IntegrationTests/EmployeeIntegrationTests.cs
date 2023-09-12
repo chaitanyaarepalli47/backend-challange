@@ -116,12 +116,12 @@ public class EmployeeIntegrationTests : IntegrationTest
 
     [Fact]
     public async Task WhenAskedForMonthlyPaycheck_ShouldReturnCorrectPayCheck(){
-        var response = await HttpClient.GetAsync($"https://localhost:7124/api/v1/Employees/getPayCheck?id=2");
+        var response = await HttpClient.GetAsync($"/api/v1/Employees/getPayCheck?id=2");
         await response.ShouldReturn(HttpStatusCode.OK ,2214.9967538461538);
     }
     [Fact]
     public async Task WhenAskedForNonExistentPaycheck_ShouldReturn404(){
-        var response = await HttpClient.GetAsync($"https://localhost:7124/api/v1/Employees/getPayCheck?id=7");
+        var response = await HttpClient.GetAsync($"/api/v1/Employees/getPayCheck?id=7");
         await response.ShouldReturn(HttpStatusCode.NotFound);
     }
 }
