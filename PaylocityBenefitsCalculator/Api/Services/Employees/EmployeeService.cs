@@ -44,6 +44,7 @@ public class EmployeeService : IEmployeeService
         return new GetEmployeeDto(e.Id, e.FirstName,e.LastName,e.Salary,e.DateOfBirth,dependentDtos);
     }
 
+    //A.V.K: Caluculates the bi-weekly paycheck an employee receives after deductions
     public decimal GetPayCheck(int id){
         if(!_employees.ContainsKey(id)) return -1;
         decimal payCheck = _employees[id].Salary;
@@ -54,9 +55,8 @@ public class EmployeeService : IEmployeeService
         var today = DateTime.Today;
         foreach(Dependent dependent in _employees[id].Dependents){
             var age = today.Year - dependent.DateOfBirth.Year;
-            if(age > 50){
+            if(age > 50)
                 deductionForOlderDependents+= 200;
-            }
         }
         decimal totalDeductionperMonth = deductionperMonth+dependentDeduction+deductionForOlderDependents;
         decimal YearlyDeduction = payCheck - (totalDeductionperMonth*12);
@@ -64,6 +64,7 @@ public class EmployeeService : IEmployeeService
         return (YearlyDeduction)/26m;
     }
 
+    // A.V.K: To add a dependent to employee satisfying no 2 spouses or domestic partners case
     public Boolean AddDependent(AddDependentApiRequest dependent){
         if(dependent.Relationship == Relationship.Spouse || dependent.Relationship == Relationship.DomesticPartner){
 

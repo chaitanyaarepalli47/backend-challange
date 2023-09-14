@@ -11,10 +11,10 @@ namespace Api.Controllers;
 public class DependentsController : ControllerBase
 {
     private readonly IDependentService _dependentService;
-
     public DependentsController( IDependentService dependentService){
         _dependentService = dependentService;
     }
+
     [SwaggerOperation(Summary = "Get dependent by id")]
     [HttpGet("{id}")]
     public async Task<ActionResult<ApiResponse<GetDependentDto>>> Get(int id)

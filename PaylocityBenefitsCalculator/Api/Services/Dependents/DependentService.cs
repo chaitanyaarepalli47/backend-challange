@@ -3,6 +3,7 @@ namespace Api.Services.Dependents;
 using Api.Dtos.Dependent;
 using Api.Models;
 
+// A.V.K: Implements Services used by Dependent controller
 public class DependentService: IDependentService
 {
     private static readonly Dictionary<int, Dependent> _dpendents =  new ();
