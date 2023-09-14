@@ -11,6 +11,7 @@ namespace ApiTests.IntegrationTests;
 
 public class EmployeeIntegrationTests : IntegrationTest
 {
+    // A.V.K: Did not change the test cases just creating the data using constructor
     [Fact]
     public async Task WhenAskedForAllEmployees_ShouldReturnAllEmployees()
     {
@@ -89,7 +90,8 @@ public class EmployeeIntegrationTests : IntegrationTest
         };
         await response.ShouldReturn(HttpStatusCode.OK, employees);
     }
- 
+
+    // A.V.K: Did not change the test cases just creating the data using constructor
     [Fact]
     //task: make test pass
     public async Task WhenAskedForAnEmployee_ShouldReturnCorrectEmployee()
@@ -114,6 +116,7 @@ public class EmployeeIntegrationTests : IntegrationTest
         await response.ShouldReturn(HttpStatusCode.NotFound);
     }
 
+    // A.V.K: Test cases for cost caluculation
     [Fact]
     public async Task WhenAskedForMonthlyPaycheck_ShouldReturnCorrectPayCheck(){
         var response = await HttpClient.GetAsync($"/api/v1/Employees/getPayCheck?id=2");

@@ -12,6 +12,7 @@ public class DependentIntegrationTests : IntegrationTest
 {
     [Fact]
     //task: make test pass
+    // A.V.K: Did not change the test cases just creating the data using constructor
     public async Task WhenAskedForAllDependents_ShouldReturnAllDependents()
     {
         var response = await HttpClient.GetAsync("/api/v1/dependents");
@@ -55,6 +56,7 @@ public class DependentIntegrationTests : IntegrationTest
 
     [Fact]
     //task: make test pass
+    // A.V.K: Did not change the test cases just creating the data using constructor
     public async Task WhenAskedForADependent_ShouldReturnCorrectDependent()
     {
         var response = await HttpClient.GetAsync("/api/v1/dependents/1");
