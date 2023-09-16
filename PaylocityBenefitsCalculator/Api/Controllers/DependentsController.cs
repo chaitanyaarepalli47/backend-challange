@@ -11,7 +11,8 @@ namespace Api.Controllers;
 public class DependentsController : ControllerBase
 {
     private readonly IDependentService _dependentService;
-    public DependentsController( IDependentService dependentService){
+    public DependentsController(IDependentService dependentService)
+    {
         _dependentService = dependentService;
     }
 
@@ -20,14 +21,14 @@ public class DependentsController : ControllerBase
     public async Task<ActionResult<ApiResponse<GetDependentDto>>> Get(int id)
     {
         GetDependentDto dependent = _dependentService.GetDependent(id);
-        if(dependent == null)
+        if (dependent == null)
             return NotFound();
         var result = new ApiResponse<GetDependentDto>
         {
             Data = dependent,
             Success = true
         };
-        return  result;
+        return result;
     }
 
     [SwaggerOperation(Summary = "Get all dependents")]
