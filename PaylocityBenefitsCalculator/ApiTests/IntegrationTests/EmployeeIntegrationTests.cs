@@ -97,7 +97,7 @@ public class EmployeeIntegrationTests : IntegrationTest
     public async Task WhenAskedForAnEmployee_ShouldReturnCorrectEmployee()
     {
         var response = await HttpClient.GetAsync("/api/v1/employees/1");
-        var employee = new GetEmployeeDto(1, "LeBron", "James", 75420.99m, new DateTime(1984, 12, 30),new List<GetDependentDto>());
+        var employee = new GetEmployeeDto(1, "LeBron", "James", 75420.99m, new DateTime(1984, 12, 30), new List<GetDependentDto>());
         // {
         //     Id = 1,
         //     FirstName = "LeBron",
@@ -107,7 +107,7 @@ public class EmployeeIntegrationTests : IntegrationTest
         // };
         await response.ShouldReturn(HttpStatusCode.OK, employee);
     }
-    
+
     [Fact]
     //task: make test pass
     public async Task WhenAskedForANonexistentEmployee_ShouldReturn404()
@@ -118,12 +118,14 @@ public class EmployeeIntegrationTests : IntegrationTest
 
     // A.V.K: Test cases for cost caluculation
     [Fact]
-    public async Task WhenAskedForMonthlyPaycheck_ShouldReturnCorrectPayCheck(){
+    public async Task WhenAskedForMonthlyPaycheck_ShouldReturnCorrectPayCheck()
+    {
         var response = await HttpClient.GetAsync($"/api/v1/Employees/getPayCheck?id=2");
-        await response.ShouldReturn(HttpStatusCode.OK ,2214.9967538461538);
+        await response.ShouldReturn(HttpStatusCode.OK, 2214.9967538461538);
     }
     [Fact]
-    public async Task WhenAskedForNonExistentPaycheck_ShouldReturn404(){
+    public async Task WhenAskedForNonExistentPaycheck_ShouldReturn404()
+    {
         var response = await HttpClient.GetAsync($"/api/v1/Employees/getPayCheck?id=7");
         await response.ShouldReturn(HttpStatusCode.NotFound);
     }
