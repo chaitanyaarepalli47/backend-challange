@@ -60,7 +60,7 @@ public class DependentIntegrationTests : IntegrationTest
     public async Task WhenAskedForADependent_ShouldReturnCorrectDependent()
     {
         var response = await HttpClient.GetAsync("/api/v1/dependents/1");
-        var dependent = new GetDependentDto(1,"Spouse","Morant", new DateTime(1998, 3, 3), Relationship.Spouse);
+        var dependent = new GetDependentDto(1, "Spouse", "Morant", new DateTime(1998, 3, 3), Relationship.Spouse);
         // {
         //     Id = 1,
         //     FirstName = "Spouse",

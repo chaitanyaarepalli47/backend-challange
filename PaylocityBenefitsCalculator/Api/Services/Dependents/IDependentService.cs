@@ -10,5 +10,5 @@ public interface IDependentService
     public GetDependentDto DependentToDto(Dependent dependent);
     public GetDependentDto GetDependent(int id);
     public ICollection<GetDependentDto> GetDependentDtos();
-    
+
 }

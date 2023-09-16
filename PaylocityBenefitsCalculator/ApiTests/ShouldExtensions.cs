@@ -14,7 +14,7 @@ internal static class ShouldExtensions
         AssertCommonResponseParts(response, expectedStatusCode);
         return Task.CompletedTask;
     }
-    
+
     public static async Task ShouldReturn<T>(this HttpResponseMessage response, HttpStatusCode expectedStatusCode, T expectedContent)
     {
         await response.ShouldReturn(expectedStatusCode);

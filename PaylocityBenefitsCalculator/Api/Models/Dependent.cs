@@ -10,7 +10,7 @@ public class Dependent
     public int EmployeeId { get; set; }
     public Employee? Employee { get; set; }
 
-    public Dependent(){}
+    public Dependent() { }
     public Dependent(
         int id,
         String firstName,
@@ -18,7 +18,8 @@ public class Dependent
         DateTime dob,
         Relationship relationship,
         int empId
-    ){
+    )
+    {
         Id = id;
         FirstName = firstName;
         LastName = lastName;

@@ -16,7 +16,8 @@ public class GetDependentDto
         String lastName,
         DateTime dob,
         Relationship r
-    ){
+    )
+    {
         Id = id;
         FirstName = firstName;
         LastName = lastName;

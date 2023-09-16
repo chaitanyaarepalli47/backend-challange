@@ -18,7 +18,8 @@ public class GetEmployeeDto
         decimal salary,
         DateTime dob,
         ICollection<GetDependentDto> dependents
-    ){
+    )
+    {
         Id = id;
         FirstName = firstName;
         LastName = lastName;
