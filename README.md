@@ -10,7 +10,7 @@ The goal is to respect your time, avoid live coding, and get a sense for how you
 
 Each of our Paylocity product teams operates like a small startup, empowered to deliver business value in
 whatever way they see fit. Because our teams are close knit and fast moving it is imperative that you are able
-to work collaboratively with your fellow developers. 
+to work collaboratively with your fellow developers.
 
 This coding challenge is designed to allow you to demonstrate your abilities and discuss your approach to
 design and implementation with your potential colleagues. You are free to use whatever technologies you
