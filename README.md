@@ -4,7 +4,7 @@ A project seed for a C# dotnet API ("PaylocityBenefitsCalculator").  It is meant
 
 The goal is to respect your time, avoid live coding, and get a sense for how you work.
 
-# Coding Challenge
+## Coding Challenge
 
 **Show us how you work.**
 
