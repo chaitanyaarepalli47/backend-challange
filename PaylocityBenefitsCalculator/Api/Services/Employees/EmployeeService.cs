@@ -78,7 +78,7 @@ public class EmployeeService : IEmployeeService
 
             foreach (Dependent dependent1 in _employees[dependent.EmployeeId].Dependents)
             {
-                if (dependent1.Relationship == dependent.Relationship) return false;
+                if (dependent1.Relationship == Relationship.Spouse || dependent1.Relationship == Relationship.DomesticPartner) return false;
             }
         }
         Dependent d = _dependentService.CreateDependent(dependent.FirstName, dependent.LastName, dependent.DateOfBirth, dependent.Relationship, dependent.EmployeeId);
